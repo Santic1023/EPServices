@@ -1,4 +1,3 @@
-const { response } = require("express")
 const express  =  require("express")
 const router = express.Router()
 const mongoose = require("mongoose")
@@ -24,12 +23,20 @@ router.get("/prueba", (req, res) =>{
 })
 */
 //Rutas de modelo servicio//
-router.post("/agregar-servicios", (req, res) => {
+router.post("/agregarservicios", (req, res) => {
     const nuevoservicio = new ModeloServicio({
         nombre: req.body.nombre,
         correo: req.body.correo,
         birth: req.body.birth,
         contraseña: req.body.contraseña,
         idServicio: req.body.idServicio,
+    })
+
+    nuevoservicio.save(function(err){
+        if(!err){
+            res.send("Usuario fue almacenado con exito")
+        }else{
+            res.send("El usuario no pudo ser capturado")
+        }
     })
 })

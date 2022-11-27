@@ -20,7 +20,7 @@ function AgregarServicios(){
             }
 
             console.log(servicio)
-            axios.post("/api/servicio/agregar-servicios", servicio )
+            axios.post("/api/servicio/agregarservicios", servicio )
             .then(res =>  {
                 alert(res.data)
             })
