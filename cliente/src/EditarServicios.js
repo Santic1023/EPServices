@@ -2,7 +2,7 @@ import React from "react"
 
 function EditarServicios(){
     return(
-        <h2>Editar Servicios</h2>
+        <h2>Editar</h2>
     )
 }
 

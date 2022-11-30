@@ -40,3 +40,14 @@ router.post("/agregarservicios", (req, res) => {
         }
     })
 })
+
+//Ruta para obtener datos de la BD//
+router.get("/listarusuarios", (req, res)  =>{
+    ModeloServicio.find({}, function(docs, err){
+        if(!err){
+            res.send(docs)
+        }else{
+            res.send(err)
+        }
+    })
+})
